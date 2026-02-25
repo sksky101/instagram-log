@@ -1,0 +1,20 @@
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Strict-Transport-Security = ""
+    X-Content-Type-Options = ""
+    X-Frame-Options = ""
+    Content-Security-Policy = ""
+    Referrer-Policy = ""
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/done"
+  to = "https://www.instagram.com/accounts/login/"
+  status = 307
+  force = true
